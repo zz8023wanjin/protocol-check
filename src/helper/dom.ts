@@ -2,7 +2,7 @@ export function _registerEvent(target: Document | Window, eventType: string, cb:
   if (target.addEventListener) {
     target.addEventListener(eventType, cb)
     return {
-      remove: function () {
+      remove() {
         target.removeEventListener(eventType, cb)
       },
     }

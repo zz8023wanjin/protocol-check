@@ -1,5 +1,5 @@
-import './App.css'
 import protocolCheck from '../../../dist/index.mjs'
+import './App.css'
 
 const customProtocol = 'lagofast://start_acc_game/xhr_test'
 
