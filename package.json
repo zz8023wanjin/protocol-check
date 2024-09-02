@@ -10,6 +10,7 @@
   "author": "rain-star",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\"",
     "build": "tsup",
     "dev": "tsup --watch",
     "prepare": "simple-git-hooks",
