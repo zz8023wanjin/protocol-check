@@ -1,6 +1,6 @@
 {
   "name": "protocol-check",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a lib to check the client custom protocol ",
   "keywords": [
     "protocol",
