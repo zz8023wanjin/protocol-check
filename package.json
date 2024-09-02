@@ -8,7 +8,21 @@
   ],
   "license": "ISC",
   "author": "rain-star",
-  "main": "index.js",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.esm.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "build": "tsup",
