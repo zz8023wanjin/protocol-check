@@ -2,26 +2,36 @@
   "name": "protocol-check",
   "version": "0.0.1",
   "description": "a lib to check the client custom protocol ",
+  "keywords": [
+    "protocol",
+    "check"
+  ],
+  "license": "ISC",
+  "author": "rain-star",
   "main": "index.js",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "prepare": "simple-git-hooks",
+    "lint-staged": "lint-staged",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "bump": "bumpp package.json -c --no-push -t --all -x \"npm run changelog\""
   },
-  "keywords": [
-    "protocol",
-    "check"
-  ],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
+    "@minko-fe/eslint-config": "^4.0.0",
     "@tsconfig/recommended": "^1.0.7",
     "bumpp": "^9.5.2",
     "conventional-changelog-cli": "^5.0.0",
+    "eslint": "^9.9.1",
+    "lint-staged": "^15.2.10",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.2.4",
     "typescript": "^5.5.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": "eslint . --cache --fix"
   }
 }
