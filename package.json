@@ -9,8 +9,6 @@
   "license": "ISC",
   "author": "rain-star",
   "files": [
-    "LICENSE",
-    "README.md",
     "dist"
   ],
   "main": "./dist/index.js",
