@@ -1,6 +1,6 @@
 {
   "name": "@rain-star/protocol-check",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "a lib to check the client custom protocol ",
   "keywords": [
     "protocol",
@@ -28,7 +28,7 @@
     "prepare": "simple-git-hooks",
     "lint-staged": "lint-staged",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "bump": "bumpp package.json -c -t --all -x \"npm run changelog\""
+    "bump": "bumpp package.json -c -t -x \"npm run changelog\""
   },
   "devDependencies": {
     "@minko-fe/eslint-config": "^4.0.0",
