@@ -4,7 +4,7 @@ import { detectBrowser } from './helper/utils'
 const protocolCheck = (options: {
   url: string
   onSuccess: () => void
-  onError: () => void
+  onError: (err_msg: string) => void
   noSupport?: () => void
 }) => {
   if (typeof window === 'undefined') {

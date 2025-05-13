@@ -17,9 +17,9 @@ const openUrlUsingFirefox = (url: string, onSuccess: () => void, onError: () => 
   }
 }
 
-const openUrlWithTimeoutHack = (url: string, onSuccess: () => void, onError: () => void) => {
+const openUrlWithTimeoutHack = (url: string, onSuccess: () => void, onError: (err_msg: string) => void) => {
   const timeout = setTimeout(function () {
-    onError()
+    onError('open url with timeout hack timeout')
     handler?.remove()
   }, 1000)
 
@@ -40,9 +40,9 @@ const openUrlWithTimeoutHack = (url: string, onSuccess: () => void, onError: () 
   window.location.href = url
 }
 
-const openUrlWithHiddenFrame = (url: string, onSuccess: () => void, onError: () => void) => {
+const openUrlWithHiddenFrame = (url: string, onSuccess: () => void, onError: (err_msg: string) => void) => {
   const timeout = setTimeout(function () {
-    onError()
+    onError('open url with hidden frame timeout')
     handler?.remove()
   }, 1000)
 
