@@ -1,18 +1,18 @@
 import { openUrlWithHiddenFrame, openUrlWithTimeoutHack } from './core'
 
-const protocolCheck = (options: { url: string; onSuccess?: () => void; noSupport?: () => void }) => {
+const protocolCheck = (options: { url: string; onSuccess?: () => void; onError?: () => void }) => {
   if (typeof window === 'undefined') {
     console.warn('protocolCheck: This function is only available in the browser environment.')
     return
   }
 
-  const { url, onSuccess, noSupport } = options
+  const { url, onSuccess, onError } = options
 
   const methods = [openUrlWithHiddenFrame, openUrlWithTimeoutHack]
 
   const tryNext = (index: number) => {
     if (index >= methods.length) {
-      noSupport?.()
+      onError?.()
       return
     }
     methods[index](

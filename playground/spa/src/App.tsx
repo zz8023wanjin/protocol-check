@@ -10,8 +10,8 @@ function App() {
       onSuccess: () => {
         console.log('Success')
       },
-      noSupport: () => {
-        console.log('No support')
+      onError: () => {
+        console.log('Error')
       },
     })
   }
