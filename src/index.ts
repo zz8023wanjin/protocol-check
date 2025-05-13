@@ -1,4 +1,5 @@
 import { openUrlWithHiddenFrame, openUrlWithTimeoutHack } from './core'
+import { promiseAny } from './helper/polyfill'
 
 const protocolCheck = (options: { url: string; onSuccess?: () => void; onError?: () => void }) => {
   if (typeof window === 'undefined') {
@@ -10,19 +11,15 @@ const protocolCheck = (options: { url: string; onSuccess?: () => void; onError?:
 
   const methods = [openUrlWithHiddenFrame, openUrlWithTimeoutHack]
 
-  const tryNext = (index: number) => {
-    if (index >= methods.length) {
-      onError?.()
-      return
-    }
-    methods[index](
-      url,
-      () => onSuccess?.(),
-      () => tryNext(index + 1),
-    )
-  }
+  const promises = methods.map((item) => item(url))
 
-  tryNext(0)
+  promiseAny(promises)
+    .then(() => {
+      onSuccess?.()
+    })
+    .catch(() => {
+      onError?.()
+    })
 }
 
 export default protocolCheck
