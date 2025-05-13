@@ -1,28 +1,29 @@
 import { openUrlWithHiddenFrame, openUrlWithTimeoutHack } from './core'
 import { detectBrowser } from './helper/utils'
 
-const protocolCheck = (options: {
-  url: string
-  onSuccess?: () => void
-  onError?: (err_msg: string) => void
-  noSupport?: () => void
-}) => {
+const protocolCheck = (options: { url: string; onSuccess?: () => void; noSupport?: () => void }) => {
   if (typeof window === 'undefined') {
+    console.warn('protocolCheck: This function is only available in the browser environment.')
     return
   }
 
-  const { url, onSuccess, onError, noSupport } = options
+  const { url, onSuccess, noSupport } = options
 
-  const browser = detectBrowser()
+  const methods = [openUrlWithHiddenFrame, openUrlWithTimeoutHack]
 
-  if (browser.isFirefox || browser.isSafari) {
-    openUrlWithHiddenFrame(url, onSuccess, onError)
-  } else if (browser.isChrome || browser.isIOS) {
-    openUrlWithTimeoutHack(url, onSuccess, onError)
-  } else {
-    console.error('Browser not supported')
-    noSupport?.()
+  const tryNext = (index: number) => {
+    if (index >= methods.length) {
+      noSupport?.()
+      return
+    }
+    methods[index](
+      url,
+      () => onSuccess?.(),
+      () => tryNext(index + 1),
+    )
   }
+
+  tryNext(0)
 }
 
 export default protocolCheck
