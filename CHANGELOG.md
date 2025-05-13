@@ -1,3 +1,12 @@
+## [0.0.11](https://github.com/zz8023wanjin/protocol-check/compare/v0.0.10...v0.0.11) (2025-05-13)
+
+
+### Features
+
+* 暴露错误信息、补充说明文档 ([2b49446](https://github.com/zz8023wanjin/protocol-check/commit/2b4944685b82ca374eb41f8f50a83fdbd9f53317))
+
+
+
 ## [0.0.10](https://github.com/zz8023wanjin/protocol-check/compare/v0.0.9...v0.0.10) (2024-09-03)
 
 
