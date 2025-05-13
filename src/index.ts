@@ -1,5 +1,4 @@
 import { openUrlWithHiddenFrame, openUrlWithTimeoutHack } from './core'
-import { detectBrowser } from './helper/utils'
 
 const protocolCheck = (options: { url: string; onSuccess?: () => void; noSupport?: () => void }) => {
   if (typeof window === 'undefined') {
@@ -27,5 +26,3 @@ const protocolCheck = (options: { url: string; onSuccess?: () => void; noSupport
 }
 
 export default protocolCheck
-
-export { detectBrowser }
