@@ -1,6 +1,6 @@
 {
   "name": "@rain-star/protocol-check",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "a lib to check the client custom protocol ",
   "keywords": [
     "protocol",
