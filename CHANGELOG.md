@@ -1,3 +1,7 @@
+## [0.0.12](https://github.com/zz8023wanjin/protocol-check/compare/v0.0.11...v0.0.12) (2025-05-13)
+
+
+
 ## [0.0.11](https://github.com/zz8023wanjin/protocol-check/compare/v0.0.10...v0.0.11) (2025-05-13)
 
 
