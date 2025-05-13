@@ -1,3 +1,12 @@
+# [0.1.0](https://github.com/zz8023wanjin/protocol-check/compare/v0.0.12...v0.1.0) (2025-05-13)
+
+
+### Features
+
+* 移除浏览器判断，采用穷举调用 ([9d426d6](https://github.com/zz8023wanjin/protocol-check/commit/9d426d6f86c08d73d9c163a59daed351964d34be))
+
+
+
 ## [0.0.12](https://github.com/zz8023wanjin/protocol-check/compare/v0.0.11...v0.0.12) (2025-05-13)
 
 
